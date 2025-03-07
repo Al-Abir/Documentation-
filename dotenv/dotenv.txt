@@ -1,0 +1,21 @@
+backend
+indexedDB.js
+npm i dotenv
+const dotenv = require('dotenv')
+//confiqure env file
+dotenv.config();
+
+.env file 
+JWT_SECRET = HGFFGTHHYFFDD12342323098
+preocess.env.varible_name
+
+Fontend 
+.env
+REACT_APP_API_URL=https://api.example.com
+REACT_APP_SECRET_KEY=your_secret_key
+
+Use 
+const apiUrl = process.env.REACT_APP_API_URL;
+console.log("API URL:", apiUrl);
+
+
