@@ -1,0 +1,11 @@
+npm i react-toastify
+সব জায়গায় যেন সহজে ব্যবহার করতে পারি তাই 
+ToastContainer Layout import করতে হবে 
+Layout.jsx
+import { ToastContainer, toast } from 'react-toastify';
+<Main>
+   </ToastContainer>
+</Main>
+তারপর যেকোনো পেজ টোস্ট দেখতে হলে ওই পেজ  toast ইম্পোর্ট করতে হবে 
+import {toast} from 'react-tostify'
+toast.success("messeage")
