@@ -9,7 +9,7 @@ dotenv.config();
 JWT_SECRET = HGFFGTHHYFFDD12342323098
 preocess.env.varible_name
 
-Fontend 
+Fontend Only React
 .env
 REACT_APP_API_URL=https://api.example.com
 REACT_APP_SECRET_KEY=your_secret_key
@@ -17,5 +17,9 @@ REACT_APP_SECRET_KEY=your_secret_key
 Use 
 const apiUrl = process.env.REACT_APP_API_URL;
 console.log("API URL:", apiUrl);
+
+Fontend -> vite project
+VITE_API_URL=http://localhost:8080
+use->  {import.meta.env.VITE_API_URL}
 
 

@@ -9,3 +9,15 @@ import { ToastContainer, toast } from 'react-toastify';
 তারপর যেকোনো পেজ টোস্ট দেখতে হলে ওই পেজ  toast ইম্পোর্ট করতে হবে 
 import {toast} from 'react-tostify'
 toast.success("messeage")
+
+======= above not working then apply the new react-hot-toast  =======
+npm i react-hot-toast
+সব জায়গায় যেন সহজে ব্যবহার করতে পারি তাই 
+ToastContainer Layout import করতে হবে 
+Layout.jsx
+import { Toaster } from 'react-hot-toast';
+<Main>
+   </Toaster>
+</Main>
+import toast from 'react-hot-toast';
+toast.success("messeage")
