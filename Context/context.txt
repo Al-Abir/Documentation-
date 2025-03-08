@@ -1,0 +1,45 @@
+
+
+context.jsx
+
+import { Component, createContext } from "react"
+
+jokonei createContext dara kono variable create kori 
+seta component ar mot kaj kore sob somoi variable ar name First 
+letter Capital rakhar try kora ucith
+
+//1 step warehouse
+export const BioContext = createContext();
+
+//2 step salesmen
+export const BioProvider  = ({children}) =>{
+    // joto khon product value ar vitor pass korbena totokhon kew product consume 
+    // korte parbena
+    const myName = "abir"
+     return <BioContext.Provider value={{myName:myName}}>
+        {children}
+     </BioContext.Provider>
+}
+
+
+app.jsx
+return (
+<BioProvider>
+       <Home></Home>  // home component ke rap korci 
+</BioProvider>
+)
+
+Home.jsx
+import React from 'react'
+import {BioContext} from "./"
+import useContext from 'react'
+const Home = () => {
+  return (
+      const myName = useContext(BioContext)
+
+      <h1>{myName}</h1>
+  )
+}
+
+export default Home;
+
