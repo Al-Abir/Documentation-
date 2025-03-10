@@ -2,6 +2,26 @@
 
 context.jsx
 
+ ...........................Another approach costom hook ..............
+  1. const AuthContext = createContext();
+  2. export const BioProvider  = ({children}) =>{
+    const [auth, setAuth] = useState({
+    user: null,
+    token: "",
+  });
+
+     return <BioContext.Provider value={[auth,setAuth]}>
+        {children}
+     </BioContext.Provider>
+}
+//costom hook
+const useAuth = ()=> useContext(BioContext)
+
+//Use
+const[auth,setAuth] = useAuth()
+
+ ---------------------------------- ------------
+
 import { Component, createContext } from "react"
 
 jokonei createContext dara kono variable create kori 
@@ -21,7 +41,6 @@ export const BioProvider  = ({children}) =>{
      </BioContext.Provider>
 }
 
-
 app.jsx
 return (
 <BioProvider>
@@ -36,10 +55,14 @@ import useContext from 'react'
 const Home = () => {
   return (
       const myName = useContext(BioContext)
-
+ 
       <h1>{myName}</h1>
   )
 }
 
 export default Home;
+
+
+
+
 
