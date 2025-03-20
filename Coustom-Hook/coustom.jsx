@@ -21,7 +21,7 @@ export default function useCategory() {
   return categories;
 }
 
-// use 
-import useCategory form ".../../file ar name"
 
-const categories = useCategory()
+// import useCategory form ".../../file ar name"
+
+// const categories = useCategory()
