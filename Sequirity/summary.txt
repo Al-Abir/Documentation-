@@ -1,0 +1,23 @@
+
+npm install express-mongo-sanitize
+npm install express-rate-limit
+npm install helmet
+npm install xss-clean
+npm install hpp
+
+//sequirity
+const rateLimit = require('express-rate-limit')
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const hpp = require('hpp');
+
+
+app.use(helmet())
+app.use(limiter); 
+app.use(cors());
+app.use(express.json());
+app.use(mongoSanitize()); 
+app.use(xss());
+app.use(hpp());  
+
