@@ -1,0 +1,29 @@
+backend side add 
+vercel.json
+{
+    "builds": [
+      {
+        "src": "./index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
+    ]
+  }
+
+আমি Vercel-এ ডিপ্লয় করবো এবং server ফোল্ডারটি নির্বাচন করবো,
+তারপর ব্যাকএন্ড অংশের জন্য .env ফাইলের ভ্যারিয়েবলগুলো যোগ করবো।
+
+তারপর ফ্রন্টএন্ড অংশ Vite প্রজেক্ট দিয়ে ডিপ্লয় করবো,
+সেখানে client ফোল্ডারটি নির্বাচন করবো,
+এবং প্রয়োজনীয় environment variable গুলো সেট করবো।
+VITE_API_URL = backend deploy হওয়া URL টা এখানে বসবে  https://laptop-buy-e-commerce-lv33.vercel.app
+then deploy . deploy ar por akta url pabo.
+
+abar backend  a giea vercel enviroment variables ar vitor  
+fonted_URL = https://laptop-buy-e-commerce-b71l.vercel.app
+ add kore abar redeploy kobro backend 

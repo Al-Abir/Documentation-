@@ -1,0 +1,45 @@
+backend side add 
+vercel.json
+{
+    "builds": [
+      {
+        "src": "./index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
+    ]
+  }
+
+আমি Vercel-এ ডিপ্লয় করবো এবং server ফোল্ডারটি নির্বাচন করবো,
+তারপর ব্যাকএন্ড অংশের জন্য .env ফাইলের ভ্যারিয়েবলগুলো যোগ করবো।
+
+
+ব্যাকএন্ড ডিপ্লয় করার পর যেই লিংক (URL) পাওয়া যাবে, সেটা ফ্রন্টএন্ডের .env ফাইলে VITE_API_URL= এর পাশে লিখে দিতে হবে।
+VITE_API_URL=https://laptop-buy-e-commerce-lv33.vercel.app
+
+tarpor fontend client dir te giea
+npm run build  korbo 
+প্রজেক্ট রান করার সময় যখন build কমান্ড চালানো হবে, তখন একটি dist নামের ফোল্ডার তৈরি হবে, 
+যেটার ভিতরে ফ্রন্টএন্ডের সব তৈরি (production-ready) ফাইল থাকবে।
+
+তারপর আমি dist ফোল্ডারটা Netlify-তে ম্যানুয়ালি ডিপ্লয় করবো।
+netlify enviroment variables ar vitor
+fonted ar .env file ar variable gulo ase se gulo add korbo then deploy + ডিপ্লয়
+
+Netlify-তে ডিপ্লয় করার পর আমি একটা URL (লিংক) পাবো
+netlify ar url ar ta abar backend  a giea
+vercel enviroment variables ar vitor  
+fonted_URL = https://jolly-paletas-cf28b7.netlify.
+app add kore abar redeploy kobro backend
+
+
+
+
+
+t
+
