@@ -1,0 +1,49 @@
+
+backend
+vercel.json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "dist/**"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ]
+}
+
+
+আমি Vercel-এ ডিপ্লয় করবো এবং server ফোল্ডারটি নির্বাচন করবো,
+তারপর ব্যাকএন্ড অংশের জন্য .env ফাইলের ভ্যারিয়েবলগুলো যোগ করবো।
+
+fontend
+verscel.json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
+
+তারপর ফ্রন্টএন্ড অংশ Vite প্রজেক্ট দিয়ে ডিপ্লয় করবো,
+সেখানে client ফোল্ডারটি নির্বাচন করবো,
+এবং প্রয়োজনীয় environment variable গুলো সেট করবো।
+VITE_API_URL = backend deploy হওয়া URL টা এখানে বসবে  https://laptop-buy-e-commerce-lv33.vercel.app
+then deploy . deploy ar por akta url pabo.
+
+আপনার Vercel-এ ফ্রন্টএন্ড ডেপ্লয় করার পর, আপনি আপনার ব্যাকএন্ড server.js প্রজেক্টে যাবেন। সেখানে, ফ্রন্টএন্ডের যে URL-টি পেয়েছেন, 
+সেটি allowedOrigins বা সমতুল্য কোনো কনফিগারেশনে যোগ করবেন। এরপর, পরিবর্তনগুলো GitHub-এ পুশ করবেন।
+//allowMultiple orign
+const allowedOrgin = ["http://localhost:5173","https://grocery-two-hazel.vercel.app"]
