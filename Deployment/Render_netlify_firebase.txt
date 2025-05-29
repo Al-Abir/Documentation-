@@ -1,0 +1,77 @@
+🟣 Backend Deployment (Render)
+Render Account → https://dashboard.render.com/
+
+New Web Service → Click
+
+Connect GitHub → Select your repo
+Configure Settings:
+
+Name: your-backend-name
+
+Root Directory: backend
+
+Build Command: npm install
+
+Start Command: node index.js
+
+Environment Variables (.env):
+
+Add each key-value manually from .env file in the "Environment" section.
+
+Click Deploy
+
+
+
+
+🔵 Frontend Deployment (Netlify)
+cd frontend
+
+Update your API base URL (ex: in axios):
+
+const API = axios.create({
+  baseURL: 'https://your-backend.onrender.com',
+  withCredentials: true
+});
+
+Run:
+npm run build
+Go to: https://app.netlify.com/
+
+Drop your dist or build folder (from frontend) into Netlify
+
+Copy the Netlify URL (example: https://venerable-brigadeiros-f8c3bd.netlify.app)
+
+
+🔁 Backend CORS Update
+In backend/index.js:
+
+const cors = require("cors");
+
+app.use(cors({
+  origin: ['https://venerable-brigadeiros-f8c3bd.netlify.app'],
+  credentials: true
+}));
+Then push the changes:
+
+git add .
+git commit -m "Add frontend domain to CORS"
+git push
+
+
+
+
+🔐 Firebase Authentication: Add Netlify Domain
+Go to: Firebase Console
+
+Select your project
+
+Go to: Authentication → Settings
+
+Scroll down to Authorized domains
+
+Click ➕ Add domain
+
+Add only: venerable-brigadeiros-f8c3bd.netlify.app
+
+(❌ No www or https://)
+
